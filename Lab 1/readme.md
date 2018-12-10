@@ -12,7 +12,7 @@ In order to illustrate these patterns, I have created a simple game, in which th
 
 ## Factory Method 
 **Intent**
-Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.  
 **Implementation**
 In the ```ShapeViewFactory.swift```  the class for drawing the shape views is defined. Therefore, we don't have to know anything about how the shape classes are encoded or how shape classes are initialized.
 
