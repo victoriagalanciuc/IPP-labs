@@ -11,9 +11,9 @@ In order to illustrate these patterns, I have created a simple game, in which th
 
 
 ## Factory Method 
-**Intent**
+**Intent**  
 Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.  
-**Implementation**
+**Implementation**  
 In the ```ShapeViewFactory.swift```  the class for drawing the shape views is defined. Therefore, we don't have to know anything about how the shape classes are encoded or how shape classes are initialized.
 
 ```swift
@@ -49,9 +49,9 @@ let shapeViews = shapeViewFactory.makeShapeViewsForShapes((shape1, shape2))
 ```
 
 ## Abstract Factory 
-**Intent**
-Provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes. In other words, abstract factory is used when we need to create families of related objects. 
-**Implementation**
+**Intent**  
+Provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes. In other words, abstract factory is used when we need to create families of related objects.   
+**Implementation**  
 I implemented the abstract factory pattern using factory method, to establish an API for constructing a group of related objects, like the shape views.
 ```swift
 class SquareShapeFactory: ShapeFactory {
@@ -74,7 +74,7 @@ class SquareShapeFactory: ShapeFactory {
     }
 }
 ```
-Now, the ```SquareShapeViewFactory``` produces ```SquareShapeView``` instances in the following way:
+Now, the ```SquareShapeViewFactory``` produces ```SquareShapeView``` instances in the following way:  
 + Initializes a maximum size.
 + Constructs the first shape view from the first passed shape.
 + Constructs the second shape view from the second passed shape.
@@ -118,9 +118,9 @@ shapeFactory = CircleShapeFactory(minProportion: 0.3, maxProportion: 0.8)
 And that's it. We have now circles instead of squares.
 
 ## Builder Pattern
-**Intent**
-Separating the construction of a complex object from its representation so that the same construction process can create different representations.
-**Implemenation**
+**Intent**  
+Separating the construction of a complex object from its representation so that the same construction process can create different representations.  
+**Implemenation**  
 Suppose we now want to vary the appearance of our ShapeView instances — for example, we want them to have various colors and we want to decide whether they should show fill and/or outline colors. The Builder design pattern will make such object configuration easier and more flexible. Of course, we may add a variety of constructors, like ```CircleShapeView.redFilledCircleWithBlueOutline()``` or initializers with a variety of arguments and default values. However, it’s not quite a scalable technique as we'd need to write a new method or initializer for every combination. Therefore, the solution would be to create a class as follows:
 
 
