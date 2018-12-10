@@ -155,7 +155,7 @@ Specifies that an application consist of a data model, presentation information,
 + Controller: The controller (here, the `ViewController`) is the mediator that coordinates all the work. It accesses the data from the model and displays it, listens to events and manipulates the data as necessary. 
 
 The communication between View to Model through Controller occurs in the following way: the Model notifies the Controller of any data changes, and then, the Controller updates the data in the Views. The View can notify the Controller of actions the user performed and the Controller will either update the Model if necessary or retrieve any requested data.  
-**Implementation**
+**Implementation**  
 In order to make sure I implemented the MVC Pattern, I ensured that each class in my project is either a Controller, a Model or a View and that there is no class that combines the functionality of two roles in the same one.  
 
 ## Observer Pattern
